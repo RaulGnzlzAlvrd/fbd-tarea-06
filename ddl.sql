@@ -54,7 +54,7 @@ CREATE TABLE [empleados] (
   [nacimiento] date,
   [genero] char(1),
   [calle] varchar(50),
-  [numero_externo] varchar(10),
+  [num] varchar(50),
   [ciudad] varchar(50),
   [cp] varchar(5),
   [supervisado_por] varchar(18) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE [empresas] (
   [rfc] varchar(20) PRIMARY KEY,
   [razon_social] varchar(50),
   [calle] varchar(50),
-  [numero] varchar(50),
+  [num] varchar(50),
   [ciudad] varchar(50),
   [cp] varchar(5)
 );
