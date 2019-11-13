@@ -83,7 +83,7 @@ CREATE TABLE [trabajar] (
   [curp] varchar(18),
   [rfc] varchar(20),
   [fecha_ingreso] date,
-  [salario_quincenal] integer,
+  [salario_quincenal] real,
   PRIMARY KEY ([curp], [rfc])
 );
 
