@@ -57,7 +57,7 @@ CREATE TABLE [empleados] (
   [num] varchar(50),
   [ciudad] varchar(50),
   [cp] varchar(5),
-  [supervisado_por] varchar(18) NOT NULL,
+  [supervisado_por] varchar(18) DEFAULT (null),
   [dirigir_empresa] varchar(20) DEFAULT (null),
   [fecha_inicio] date DEFAULT (null)
 );
@@ -90,7 +90,7 @@ CREATE TABLE [trabajar] (
 CREATE TABLE [colaborar] (
   [curp] varchar(18),
   [num_proyecto] integer,
-  [fecha_incio] date,
+  [fecha_inicio] date,
   [fecha_fin] date,
   [num_horas] integer,
   PRIMARY KEY ([curp], [num_proyecto])
