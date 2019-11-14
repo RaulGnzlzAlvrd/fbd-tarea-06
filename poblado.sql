@@ -218,6 +218,7 @@ SET IDENTITY_INSERT proyectos OFF;
 
 -- Insertamos empleados
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HWYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', null, null, null);
+insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HAYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('EVLATJTUJSBJHFXXKQ', 'Fabien', 'Ayce', 'Malacrida', '08/03/1988', 'M', 'Sullivan', '5', 'Shajing', '16181', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('AELISHPUUJKWRBEOVL', 'Trista', 'Tomasini', 'Strutley', '13/03/1980', 'F', 'Glacier Hill', '900', 'Kuching', '16961', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('JRJJNHNQJOCUNENFAP', 'Alberta', 'Bottrell', 'Bonnick', '12/12/2007', 'F', 'Spaight', '03', 'Bratsk', '51795', null, null, null);
@@ -1606,3 +1607,5 @@ insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('GSZP
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('WWYOAEJOIBIXWEKLCJ', 'UALJTHZDURHHE', '18/03/2004', '7824.17');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('YQGLDLISJWTAYTUTXO', 'TCYCRETQSBOXH', '10/02/2001', '14239.47');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('LKMXRDCGOQURZBZLVL', 'KWJZBPNTDJOYV', '27/12/1987', '28638.73');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('HAYCTIVIABFRBCWIXP', 'PEMEXPEMEXPEM', '09/07/1968', '2405.63');
+

@@ -1,18 +1,22 @@
 USE FBD2020_1_5312_TAREA_06;
 
 -- a. Encontrar el nombre y la ciudad de todos los empleados que trabajan en PEMEX.
--- Sin probar.
+-- YA JALA
+
+--insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HAYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', null, null, null);
+--insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('HAYCTIVIABFRBCWIXP', 'PEMEXPEMEXPEM', '09/07/1968', '2405.63');
+
 SELECT nombre,
 	   paterno,
 	   materno,
-	   empleados.ciudad
-FROM trabajar
-INNER JOIN empleados ON empleados.curp = trabajar.curp
+	   empleados.ciudad,
+	   razon_social
+FROM empleados
+INNER JOIN trabajar ON empleados.curp = trabajar.curp
 INNER JOIN empresas ON trabajar.rfc = empresas.rfc
 WHERE empresas.razon_social = 'PEMEX';
-
 -- b. Encontrar todos los empleados que no viven en la misma ciudad de la empresa en que trabajan.
--- Sin probar.
+-- Jala
 SELECT nombre,
 	   paterno,
 	   materno,
@@ -20,11 +24,10 @@ SELECT nombre,
 FROM trabajar
 INNER JOIN empleados ON empleados.curp = trabajar.curp
 INNER JOIN empresas ON trabajar.rfc = empresas.rfc
-WHERE empleados.ciudad = empresas.ciudad;
+WHERE empleados.ciudad != empresas.ciudad;
 
 -- c. Calcular el salario mensual de todas las directoras.
--- Poner F o M, genero
--- Sin probar
+-- Jala
 SELECT nombre,
 	   paterno,
 	   materno,
