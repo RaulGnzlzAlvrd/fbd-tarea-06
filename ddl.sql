@@ -48,15 +48,15 @@ IF EXISTS (SELECT * FROM sysobjects WHERE id = object_id('dbo.empresas') )
 -- Creamos las tablas
 CREATE TABLE [empleados] (
   [curp] varchar(18) PRIMARY KEY,
-  [nombre] varchar(50),
-  [paterno] varchar(50),
-  [materno] varchar(50),
-  [nacimiento] date,
-  [genero] char(1),
-  [calle] varchar(50),
-  [num] varchar(50),
-  [ciudad] varchar(50),
-  [cp] varchar(5),
+  [nombre] varchar(50) NOT NULL, 
+  [paterno] varchar(50) NOT NULL,
+  [materno] varchar(50) NOT NULL,
+  [nacimiento] date NOT NULL,
+  [genero] char(1) NOT NULL,
+  [calle] varchar(50) NOT NULL,
+  [num] varchar(50) NOT NULL,
+  [ciudad] varchar(50) NOT NULL,
+  [cp] varchar(5) NOT NULL,
   [supervisado_por] varchar(18) DEFAULT (null),
   [dirigir_empresa] varchar(20) DEFAULT (null),
   [fecha_inicio] date DEFAULT (null)
@@ -64,49 +64,49 @@ CREATE TABLE [empleados] (
 
 CREATE TABLE [empresas] (
   [rfc] varchar(20) PRIMARY KEY,
-  [razon_social] varchar(50),
-  [calle] varchar(50),
-  [num] varchar(50),
-  [ciudad] varchar(50),
-  [cp] varchar(5)
+  [razon_social] varchar(50) NOT NULL, 
+  [calle] varchar(50) NOT NULL, 
+  [num] varchar(50) NOT NULL, 
+  [ciudad] varchar(50) NOT NULL, 
+  [cp] varchar(5) NOT NULL
 );
 
 CREATE TABLE [proyectos] (
   [num_proyecto] integer PRIMARY KEY IDENTITY(1, 1),
-  [nombre] varchar(50),
-  [fecha_fin] date,
-  [fecha_inicio] date,
+  [nombre] varchar(50) NOT NULL,
+  [fecha_fin] date NOT NULL,
+  [fecha_inicio] date NOT NULL,
   [controlado_por] varchar(20) NOT NULL
 );
 
 CREATE TABLE [trabajar] (
   [curp] varchar(18),
   [rfc] varchar(20),
-  [fecha_ingreso] date,
-  [salario_quincenal] real,
+  [fecha_ingreso] date NOT NULL,
+  [salario_quincenal] real NOT NULL,
   PRIMARY KEY ([curp], [rfc])
 );
 
 CREATE TABLE [colaborar] (
   [curp] varchar(18),
   [num_proyecto] integer,
-  [fecha_inicio] date,
-  [fecha_fin] date,
-  [num_horas] integer,
+  [fecha_inicio] date NOT NULL,
+  [fecha_fin] date NOT NULL,
+  [num_horas] integer NOT NULL,
   PRIMARY KEY ([curp], [num_proyecto])
 );
 
 -- Creamos las llaves foraneas
-ALTER TABLE [empleados] ADD FOREIGN KEY ([supervisado_por]) REFERENCES [empleados] ([curp]);
+ALTER TABLE [empleados] ADD FOREIGN KEY ([supervisado_por]) REFERENCES [empleados] ([curp]) ON DELETE CASCADE;
 
-ALTER TABLE [empleados] ADD FOREIGN KEY ([dirigir_empresa]) REFERENCES [empresas] ([rfc]);
+ALTER TABLE [empleados] ADD FOREIGN KEY ([dirigir_empresa]) REFERENCES [empresas] ([rfc]) ON DELETE CASCADE;
 
-ALTER TABLE [trabajar] ADD FOREIGN KEY ([curp]) REFERENCES [empleados] ([curp]);
+ALTER TABLE [trabajar] ADD FOREIGN KEY ([curp]) REFERENCES [empleados] ([curp]) ON DELETE CASCADE;
 
-ALTER TABLE [trabajar] ADD FOREIGN KEY ([rfc]) REFERENCES [empresas] ([rfc]);
+ALTER TABLE [trabajar] ADD FOREIGN KEY ([rfc]) REFERENCES [empresas] ([rfc]) ON DELETE CASCADE;
 
-ALTER TABLE [proyectos] ADD FOREIGN KEY ([controlado_por]) REFERENCES [empresas] ([rfc]);
+ALTER TABLE [proyectos] ADD FOREIGN KEY ([controlado_por]) REFERENCES [empresas] ([rfc]) ON DELETE CASCADE;
 
-ALTER TABLE [colaborar] ADD FOREIGN KEY ([curp]) REFERENCES [empleados] ([curp]);
+ALTER TABLE [colaborar] ADD FOREIGN KEY ([curp]) REFERENCES [empleados] ([curp]) ON DELETE CASCADE;
 
-ALTER TABLE [colaborar] ADD FOREIGN KEY ([num_proyecto]) REFERENCES [proyectos] ([num_proyecto]);
+ALTER TABLE [colaborar] ADD FOREIGN KEY ([num_proyecto]) REFERENCES [proyectos] ([num_proyecto]) ON DELETE CASCADE;
