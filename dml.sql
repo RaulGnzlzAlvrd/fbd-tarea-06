@@ -52,12 +52,13 @@ WHERE (DATEPART(QUARTER, fecha_inicio) = 2 OR  DATEPART(QUARTER, fecha_inicio) =
 -- f. Obtener una lista de cada compañía y el salario promedio que paga. La información se debe
 --    mostrar por compañía, año, y género.
 -- Terminado
-SELECT empresas.razon_social, empleados.genero, YEAR(trabajar.fecha_ingreso) AS año,
-	   AVG(salario_quincenal) AS Salario
+SELECT empresas.razon_social AS compania, 
+	   empleados.genero, YEAR(trabajar.fecha_ingreso) AS año,
+	   AVG(salario_quincenal) AS SalarioPromedio
 FROM empresas
 INNER JOIN trabajar ON trabajar.rfc = empresas.rfc
 INNER JOIN empleados ON trabajar.curp = empleados.curp
-GROUP BY empresas.razon_social, empleados.genero, trabajar.fecha_ingreso;
+GROUP BY empresas.razon_social, YEAR(trabajar.fecha_ingreso), empleados.genero;
 
 -- g. Empleados que colaboran en proyectos que controlan empresas para las que no trabajan.
 -- PENDUENTE
@@ -86,7 +87,34 @@ GROUP BY empresas.razon_social;
 -- i. Encontrar información de los empleados y número de horas que dedican a los proyectos.
 --    Interesan aquellos empleados que colaboran en al menos dos proyectos y en donde el
 --    número de horas que dediquen a algún proyecto sea mayor a 20.
+-- Ya jala
+SELECT no_proyectos,
+       horas,
+       empleados.*
+FROM empleados 
+-- Hacemos Join para obtener info de esos empleados
+INNER JOIN 
+	(SELECT curp,
+			COUNT(num_proyecto) AS no_proyectos,
+			SUM(num_horas) AS horas
+	 FROM colaborar 
+	 WHERE num_horas > 20
+	 GROUP BY curp
+	 HAVING COUNT(num_proyecto) >= 2) sub 
+ON sub.curp = empleados.curp;
+
 -- j. Encontrar la cantidad de empleados en cada compañía, por año, trimestre y género.
+-- Ya jala
+SELECT 
+	rfc,
+	COUNT(trabajar.curp) AS no_empleados_por_compania,
+	DATEPART(Y ,trabajar.fecha_ingreso) AS año,
+	DATEPART(QUARTER ,trabajar.fecha_ingreso) AS trimestre,
+	genero
+FROM trabajar
+INNER JOIN empleados ON empleados.curp = trabajar.curp 
+GROUP BY rfc,DATEPART(QUARTER ,trabajar.fecha_ingreso), DATEPART(Y ,trabajar.fecha_ingreso), genero;
+
 
 -- k. Encontrar el nombre del empleado que gana más dinero en cada compañía.
 -- Ya jala
