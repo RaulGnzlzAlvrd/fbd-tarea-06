@@ -31,7 +31,7 @@ WHERE empleados.ciudad != empresas.ciudad;
 SELECT nombre,
 	   paterno,
 	   materno,
-	   salario_quincenal * 2
+	   salario_quincenal * 2 AS SalarioMensual
 FROM empresas
 INNER JOIN trabajar ON trabajar.rfc = empresas.rfc
 INNER JOIN empleados ON empresas.rfc = empleados.dirigir_empresa
@@ -47,8 +47,13 @@ INNER JOIN empleados ON empleados.dirigir_empresa = empresas.rfc
 WHERE (DATEPART(QUARTER, fecha_inicio) = 2 OR  DATEPART(QUARTER, fecha_inicio) = 4) 
 		AND DATEPART(YEAR, fecha_inicio) IN (2018);
 -- e. Encontrar a todos los empleados que viven en la misma ciudad y en la misma calle que su supervisor.
--- PENDIENTE
-
+-- JALA, checar de nuevo al poblar
+SELECT e.calle AS calleEmpleado,
+	   s.calle AS calleSupervisor,
+	   *
+FROM empleados e
+INNER JOIN empleados s ON s.supervisado_por = e.curp
+WHERE s.calle = e.calle;
 -- f. Obtener una lista de cada compañía y el salario promedio que paga. La información se debe
 --    mostrar por compañía, año, y género.
 -- Terminado

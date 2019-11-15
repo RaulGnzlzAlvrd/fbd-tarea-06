@@ -217,8 +217,8 @@ SET IDENTITY_INSERT proyectos OFF;
 
 
 -- Insertamos empleados
-insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HWYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HAYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', null, null, null);
+insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HWYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', 'HAYCTIVIABFRBCWIXP', null,null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('EVLATJTUJSBJHFXXKQ', 'Fabien', 'Ayce', 'Malacrida', '08/03/1988', 'M', 'Sullivan', '5', 'Shajing', '16181', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('AELISHPUUJKWRBEOVL', 'Trista', 'Tomasini', 'Strutley', '13/03/1980', 'F', 'Glacier Hill', '900', 'Kuching', '16961', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('JRJJNHNQJOCUNENFAP', 'Alberta', 'Bottrell', 'Bonnick', '12/12/2007', 'F', 'Spaight', '03', 'Bratsk', '51795', null, null, null);
@@ -1778,7 +1778,6 @@ UPDATE empleados SET supervisado_por = 'XZZPTFUPSQYBRZZDXG' WHERE curp = 'RAVHKN
 UPDATE empleados SET supervisado_por = 'MTSPBGWQRENYHIRSMS' WHERE curp = 'EKAPFCVIZELEBUGFLO';
 UPDATE empleados SET supervisado_por = 'DXNYEAPXLDMQRXCDDS' WHERE curp = 'KEEFAESZQYFKRKCPGP';
 UPDATE empleados SET supervisado_por = 'FXRNBUQCNXJVRYULHU' WHERE curp = 'VOTZDNVDIEPDBLAIXN';
-UPDATE empleados SET supervisado_por = 'HWYCTIVIABFRBCWIXP' WHERE curp = 'DXNYEAPXLDMQRXCDDS';
 UPDATE empleados SET supervisado_por = 'QTYZSHNHCFJVBHXGMY' WHERE curp = 'UDSRQMTPFJHVAYFHOC';
 UPDATE empleados SET supervisado_por = 'JMIVOBACVIELIWVSJN' WHERE curp = 'DPTGKGMHSOOZONJGFL';
 UPDATE empleados SET supervisado_por = 'IHQDLVIKNCFJPSTFOI' WHERE curp = 'APTJTPSUZDDVOUPNLO';
