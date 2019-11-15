@@ -97,16 +97,16 @@ CREATE TABLE [colaborar] (
 );
 
 -- Creamos las llaves foraneas
-ALTER TABLE [empleados] ADD FOREIGN KEY ([supervisado_por]) REFERENCES [empleados] ([curp]) ON DELETE CASCADE;
+ALTER TABLE [empleados] ADD FOREIGN KEY ([supervisado_por]) REFERENCES [empleados] ([curp]) ON DELETE NO ACTION;
 
 ALTER TABLE [empleados] ADD FOREIGN KEY ([dirigir_empresa]) REFERENCES [empresas] ([rfc]) ON DELETE CASCADE;
 
 ALTER TABLE [trabajar] ADD FOREIGN KEY ([curp]) REFERENCES [empleados] ([curp]) ON DELETE CASCADE;
 
-ALTER TABLE [trabajar] ADD FOREIGN KEY ([rfc]) REFERENCES [empresas] ([rfc]) ON DELETE CASCADE;
+ALTER TABLE [trabajar] ADD FOREIGN KEY ([rfc]) REFERENCES [empresas] ([rfc]) ON DELETE NO ACTION;
 
 ALTER TABLE [proyectos] ADD FOREIGN KEY ([controlado_por]) REFERENCES [empresas] ([rfc]) ON DELETE CASCADE;
 
 ALTER TABLE [colaborar] ADD FOREIGN KEY ([curp]) REFERENCES [empleados] ([curp]) ON DELETE CASCADE;
 
-ALTER TABLE [colaborar] ADD FOREIGN KEY ([num_proyecto]) REFERENCES [proyectos] ([num_proyecto]) ON DELETE CASCADE;
+ALTER TABLE [colaborar] ADD FOREIGN KEY ([num_proyecto]) REFERENCES [proyectos] ([num_proyecto]) ON DELETE NO ACTION;
