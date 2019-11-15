@@ -51,12 +51,13 @@ WHERE (DATEPART(QUARTER, fecha_inicio) = 2 OR  DATEPART(QUARTER, fecha_inicio) =
 
 -- f. Obtener una lista de cada compañía y el salario promedio que paga. La información se debe
 --    mostrar por compañía, año, y género.
--- Falta lo de mostrar por compañia, etc
-SELECT empresas.razon_social,
+-- Terminado
+SELECT empresas.razon_social, empleados.genero, YEAR(trabajar.fecha_ingreso) AS año,
 	   AVG(salario_quincenal) AS Salario
 FROM empresas
 INNER JOIN trabajar ON trabajar.rfc = empresas.rfc
-GROUP BY empresas.razon_social;
+INNER JOIN empleados ON trabajar.curp = empleados.curp
+GROUP BY empresas.razon_social, empleados.genero, trabajar.fecha_ingreso;
 
 -- g. Empleados que colaboran en proyectos que controlan empresas para las que no trabajan.
 -- PENDUENTE
