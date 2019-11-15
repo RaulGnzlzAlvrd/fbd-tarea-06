@@ -190,7 +190,7 @@ FROM
 	SELECT curp
 	FROM colaborar) c INNER JOIN empleados  ON c.curp = empleados.curp;
 -- r. Encontrar la información de las compañías que tienen al menos dos empleados en la misma ciudad en que tienen sus instalaciones.
---  JALA, sin resultados falta poblar
+--  Terminada
 SELECT empresas.rfc, 
 	   razon_social,
 	   ciudad,

@@ -344,7 +344,7 @@ insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('NYRZJZCXMQHIIYSGWN', 'Mitchael', 'Bourdis', 'Bickmore', '13/06/1987', 'M', 'Helena', '53541', 'Brzozów', '86318', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('KLJWICRZAXYQUYFOUZ', 'Annora', 'Davison', 'Abernethy', '25/05/1982', 'F', 'Elgar', '0053', 'Springfield', '81592', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('VNTNASJRGHTLEDTNAK', 'Yuma', 'Kalinowsky', 'Helsdon', '14/06/1974', 'M', 'Hazelcrest', '302', 'Pahonjean', '01710', null, null, null);
-insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('IANWNEDSQUWXYBYCQO', 'Ellissa', 'Dzeniskevich', 'Kempstone', '03/01/2018', 'F', 'Daystar', '10', 'Kyzyl', '66704', null, null, null);
+insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('IANWNEDSQUWXYBYCQO', 'Ellissa', 'Dzeniskevich', 'Kempstone', '03/01/2018', 'F', 'Daystar', '10', 'Kadugedong', '66704', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('WVSWDLULMOMHNGCURY', 'Barbabas', 'Anderson', 'Skeffington', '19/10/1997', 'M', 'Pepper Wood', '93492', 'Trondheim', '15562', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('WVJZMTCNNWWSQZBTNB', 'Hendrika', 'Grabbam', 'McJury', '11/07/1959', 'F', 'Merrick', '053', 'Renhe', '95206', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('YOKZDLTKINHFCACIQO', 'Maritsa', 'Hammor', 'Fraczek', '18/04/1966', 'F', 'Sullivan', '60', 'Pho Duc', '14216', null, null, null);
@@ -590,7 +590,7 @@ insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('SYGZZEVKFSMCFNUZAW', 'Humfried', 'Goldby', 'Haughton', '17/06/1976', 'M', 'Cambridge', '84847', 'Zoetermeer', '98865', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('LIYYHYEPHZCZGQOROV', 'Gayle', 'Waything', 'Pagen', '29/07/1960', 'M', 'Swallow', '571', 'Renhe', '07151', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('EWZJKVDDPZISTVSLDS', 'Mikaela', 'Readshaw', 'Bofield', '13/10/2003', 'F', 'Corry', '64', 'Ayrihuanca', '08217', null, 'EJPQVILFYZBVT', '13/06/1961');
-insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('DXNYEAPXLDMQRXCDDS', 'Carolus', 'Hawe', 'Thews', '11/10/2011', 'M', 'Kinsman', '3964', 'Hule', '47853', null, null, null);
+insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('DXNYEAPXLDMQRXCDDS', 'Carolus', 'Hawe', 'Thews', '11/10/2011', 'M', 'Kinsman', '3964', 'Kadugedong', '47853', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('PLNHDWODFVQSMJDLJJ', 'Pippo', 'Swiffan', 'Keasley', '06/04/2006', 'M', 'Glacier Hill', '730', 'Boden', '06504', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('XQOCECQCQEHMVCAWXO', 'Polly', 'Trapp', 'Khrishtafovich', '01/05/1976', 'F', 'Arapahoe', '179', 'Camp Ithier', '58612', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('WZVOODGAQVXONOVGIH', 'Palmer', 'Crannage', 'Callinan', '16/04/1968', 'M', 'Coolidge', '20', 'Lanjaghbyur', '57859', null, null, null);
@@ -696,7 +696,7 @@ insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('KTQPYLPCAMMGVWIGJL', 'Alain', 'Priter', 'Thams', '15/01/2012', 'M', 'Clemons', '295', 'Shirbīn', '53816', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('LVKKRTPDDYRGUSANXP', 'Wolf', 'Bollis', 'Cockram', '07/04/1996', 'M', 'Katie', '67695', 'Simitli', '39271', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('LPPZROZAAMQXNJUOBK', 'Felipa', 'Bembridge', 'Risborough', '13/08/1967', 'F', 'Bashford', '911', 'Cabaret', '53365', null, null, null);
-insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('VKRKLLKCBWUOVSKHLY', 'Nikolaus', 'Dowty', 'Ibbetson', '27/01/1956', 'M', 'Karstens', '475', 'Az̧ Z̧alī‘ah', '42000', null, null, null);
+insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('VKRKLLKCBWUOVSKHLY', 'Nikolaus', 'Dowty', 'Ibbetson', '27/01/1956', 'M', 'Karstens', '475', 'Kadugedong', '42000', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('PKUVQPLPSEIRZPNHAT', 'Derward', 'Upcraft', 'Androck', '11/03/1983', 'M', 'Pleasure', '21', 'Matinha', '74989', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('KLMBAKPIAWCVLATBOE', 'Krispin', 'Sandeland', 'Coit', '05/01/1984', 'M', 'Center', '007', 'Xom Tan Long', '12247', null, null, null);
 insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('TZVXQVDLUKFVKRVCQH', 'Romy', 'Messier', 'Civitillo', '25/04/1974', 'F', 'Sutherland', '34', 'Trondheim', '76822', null, null, null);
@@ -1565,7 +1565,7 @@ insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('DHSK
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('ZDWBYHZLWONRNFPTZY', 'DEYMDWPSHQKBE', '07/03/1965', '4705.07');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('WVJZMTCNNWWSQZBTNB', 'IRGBQLJCUFVUU', '15/12/2016', '25467.22');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('VDSIYLBQZSINRJNJYE', 'ZRRYSQWRYTPUJ', '04/06/1961', '13950.01');
-insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('OTOSXKKNRTQJVPYGDS', 'NENBBXPOMAYPB', '10/12/1951', '11626.56');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('OTOSXKKNRTQJVPYGDS', 'PEMEXPEMEXPEM', '10/12/1951', '11626.56');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('JPXDPYHEQNSVGRDMDK', 'TDRMFQXKFUDCI', '20/11/1953', '11269.34');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('SYGZZEVKFSMCFNUZAW', 'UXFUIKRNLFHYF', '18/11/1975', '23843.18');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('JWXYXBTWHKONZAFGMH', 'MWSYXRDBKODZZ', '28/02/1990', '27103.75');
@@ -1580,7 +1580,7 @@ insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('RBDE
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('ZWOELXMXSPIFPMHUUM', 'TDRMFQXKFUDCI', '27/10/1964', '9006.25');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('OCTABPUVARMJSIMPFS', 'RFFALYVGDIVWP', '20/12/1998', '28720.24');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('FPUWAYVXCHQWMMMCUI', 'SUQDSGVCTFNTP', '15/09/1959', '24573.00');
-insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('MVGZFKDLDAMVWTGVTK', 'EZWOUYQIJLELO', '14/11/1978', '3721.85');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('MVGZFKDLDAMVWTGVTK', 'PEMEXPEMEXPEM', '14/11/1978', '3721.85');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('DHSKDIYPPVCNLOUPKK', 'THNWKYEHGGNRY', '19/03/1961', '14851.83');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('JZDOJZOFOEGYXNDTTJ', 'DEYMDWPSHQKBE', '05/10/2008', '12623.47');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('WHRMFURMDORUKTTKRC', 'JKQHDKOTKNQCK', '23/10/2017', '20433.41');
@@ -1603,9 +1603,11 @@ insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('SDMG
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('RQUKFVMBTKEVIQYJWI', 'BDYUHWFCBTLCL', '01/12/1952', '23896.79');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('OIKRHWOSGBOYEDGOBR', 'EZWOUYQIJLELO', '13/03/1997', '26405.62');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('RLLMCWQSHDGPUVEMRQ', 'PNKHMRBBYSUGC', '18/10/2006', '15431.08');
-insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('GSZPOATTXJHBQBPZAQ', 'VXORPOYNPXFIA', '31/03/1985', '8825.66');
-insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('WWYOAEJOIBIXWEKLCJ', 'UALJTHZDURHHE', '18/03/2004', '7824.17');
-insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('YQGLDLISJWTAYTUTXO', 'TCYCRETQSBOXH', '10/02/2001', '14239.47');
-insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('LKMXRDCGOQURZBZLVL', 'KWJZBPNTDJOYV', '27/12/1987', '28638.73');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('GSZPOATTXJHBQBPZAQ', 'PEMEXPEMEXPEM', '31/03/1985', '8825.66');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('WWYOAEJOIBIXWEKLCJ', 'PEMEXPEMEXPEM', '18/03/2004', '7824.17');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('YQGLDLISJWTAYTUTXO', 'PEMEXPEMEXPEM', '10/02/2001', '14239.47');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('LKMXRDCGOQURZBZLVL', 'PEMEXPEMEXPEM', '27/12/1987', '28638.73');
 insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('HAYCTIVIABFRBCWIXP', 'PEMEXPEMEXPEM', '09/07/1968', '2405.63');
-
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('DXNYEAPXLDMQRXCDDS', 'SPPFLXPLJNPQK', '09/07/1968', '2405.63');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('VKRKLLKCBWUOVSKHLY', 'SPPFLXPLJNPQK', '09/07/1968', '2405.63');
+insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('IANWNEDSQUWXYBYCQO', 'SPPFLXPLJNPQK', '26/12/1976', '4378.69');
