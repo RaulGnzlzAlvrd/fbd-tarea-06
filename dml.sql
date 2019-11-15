@@ -47,7 +47,7 @@ INNER JOIN empleados ON empleados.dirigir_empresa = empresas.rfc
 WHERE (DATEPART(QUARTER, fecha_inicio) = 2 OR  DATEPART(QUARTER, fecha_inicio) = 4) 
 		AND DATEPART(YEAR, fecha_inicio) IN (2018);
 -- e. Encontrar a todos los empleados que viven en la misma ciudad y en la misma calle que su supervisor.
--- JALA, checar de nuevo al poblar
+-- JALA
 SELECT e.calle AS calleEmpleado,
 	   s.calle AS calleSupervisor,
 	   *
