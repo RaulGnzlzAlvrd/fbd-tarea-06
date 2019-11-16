@@ -66,17 +66,14 @@ INNER JOIN empleados ON trabajar.curp = empleados.curp
 GROUP BY empresas.razon_social, YEAR(trabajar.fecha_ingreso), empleados.genero;
 
 -- g. Empleados que colaboran en proyectos que controlan empresas para las que no trabajan.
--- PENDUENTE
---SELECT empleados.curp, 
---	   empleados.nombre, 
---	   empleados.paterno, 
---	   empleados.materno, 
---	   proyectos.num_proyecto
---FROM colaborar
---INNER JOIN empleados ON empleados.curp = colaborar.curp
---INNER JOIN proyectos ON proyectos.num_proyecto = colaborar.num_proyecto
--- WHERE (empleados.curp, proyectos.rfc) NOT IN (SELECT curp,rfc FROM trabajar); 
-
+-- Ya jala
+(SELECT empleados.curp AS empleado, 
+		empresas.rfc 
+FROM (((empleados 
+	INNER JOIN colaborar ON empleados.curp = colaborar.curp)
+	INNER JOIN proyectos ON proyectos.num_proyecto = colaborar.num_proyecto)
+	INNER JOIN empresas ON empresas.rfc = proyectos.controlado_por))
+EXCEPT (SELECT curp, rfc FROM trabajar );
 
 -- h. Encontrar el máximo, mínimo y total de salarios pagados por cada compañía.
 -- Ya jala
@@ -265,7 +262,12 @@ INNER JOIN colaborar ON empleados.curp = colaborar.curp
 WHERE colaborar.fecha_inicio = empleados.nacimiento;
 
 -- u. Obtener una lista del número de empleados que supervisa cada supervisor.
--- NO hay datos de supervisor para probar
+-- Ya jala
+SELECT e.nombre AS Jefe,
+COUNT(e.curp) AS Supervisa_a 
+FROM empleados e 
+INNER JOIN empleados s ON e.curp = s.supervisado_por
+GROUP BY e.nombre,e.curp;
 
 -- v. Obtener una lista de los directores de más de 50 años.
 -- YA JALA
