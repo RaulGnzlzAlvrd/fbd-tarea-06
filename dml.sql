@@ -1,11 +1,6 @@
 USE FBD2020_1_5312_TAREA_06;
 
 -- a. Encontrar el nombre y la ciudad de todos los empleados que trabajan en PEMEX.
--- YA JALA
-
---insert into empleados (curp, nombre, paterno, materno, nacimiento, genero, calle, num, ciudad, cp, supervisado_por, dirigir_empresa, fecha_inicio) values ('HAYCTIVIABFRBCWIXP', 'Quintina', 'Galloway', 'Coull', '19/01/1990', 'F', 'Sauthoff', '300', 'Garland', '26979', null, null, null);
---insert into trabajar (curp, rfc, fecha_ingreso, salario_quincenal) values ('HAYCTIVIABFRBCWIXP', 'PEMEXPEMEXPEM', '09/07/1968', '2405.63');
-
 SELECT nombre,
 	   paterno,
 	   materno,
@@ -15,8 +10,8 @@ FROM empleados
 INNER JOIN trabajar ON empleados.curp = trabajar.curp
 INNER JOIN empresas ON trabajar.rfc = empresas.rfc
 WHERE empresas.razon_social = 'PEMEX';
+
 -- b. Encontrar todos los empleados que no viven en la misma ciudad de la empresa en que trabajan.
--- Jala
 SELECT nombre,
 	   paterno,
 	   materno,
@@ -27,7 +22,6 @@ INNER JOIN empresas ON trabajar.rfc = empresas.rfc
 WHERE empleados.ciudad != empresas.ciudad;
 
 -- c. Calcular el salario mensual de todas las directoras.
--- Jala
 SELECT nombre,
 	   paterno,
 	   materno,
@@ -37,9 +31,7 @@ INNER JOIN trabajar ON trabajar.rfc = empresas.rfc
 INNER JOIN empleados ON empresas.rfc = empleados.dirigir_empresa
 WHERE empleados.genero = 'F';
 
--- d. Obtener la información de los directores (en general) y empresas que comenzaron a dirigir 
---    durante el segundo y cuarto trimestre de 2018.
--- Ya jala -- SE agregó al script de poblado info encesaria praa mostrar, cuando se poble, checar de nuevo
+-- d. Obtener la información de los directores (en general) y empresas que comenzaron a dirigir durante el segundo y cuarto trimestre de 2018.
 SELECT empleados.*,
 	   empresas.*
 FROM empresas 
@@ -47,16 +39,13 @@ INNER JOIN empleados ON empleados.dirigir_empresa = empresas.rfc
 WHERE (DATEPART(QUARTER, fecha_inicio) = 2 OR  DATEPART(QUARTER, fecha_inicio) = 4) 
 		AND DATEPART(YEAR, fecha_inicio) IN (2018);
 -- e. Encontrar a todos los empleados que viven en la misma ciudad y en la misma calle que su supervisor.
--- JALA
 SELECT e.calle AS calleEmpleado,
 	   s.calle AS calleSupervisor,
 	   *
 FROM empleados e
 INNER JOIN empleados s ON s.supervisado_por = e.curp
 WHERE s.calle = e.calle;
--- f. Obtener una lista de cada compañía y el salario promedio que paga. La información se debe
---    mostrar por compañía, año, y género.
--- Terminado
+-- f. Obtener una lista de cada compañía y el salario promedio que paga. La información se debe mostrar por compañía, año, y género.
 SELECT empresas.razon_social AS compania, 
 	   empleados.genero, YEAR(trabajar.fecha_ingreso) AS año,
 	   AVG(salario_quincenal) AS SalarioPromedio
@@ -66,7 +55,6 @@ INNER JOIN empleados ON trabajar.curp = empleados.curp
 GROUP BY empresas.razon_social, YEAR(trabajar.fecha_ingreso), empleados.genero;
 
 -- g. Empleados que colaboran en proyectos que controlan empresas para las que no trabajan.
--- Ya jala
 (SELECT empleados.curp AS empleado, 
 		empresas.rfc 
 FROM (((empleados 
@@ -76,8 +64,6 @@ FROM (((empleados
 EXCEPT (SELECT curp, rfc FROM trabajar );
 
 -- h. Encontrar el máximo, mínimo y total de salarios pagados por cada compañía.
--- Ya jala
--- Es total count o sum? 
 SELECT empresas.razon_social,
 	   MAX(salario_quincenal) AS Maximo,
 	   MIN(salario_quincenal) AS Minimo,
@@ -87,9 +73,7 @@ INNER JOIN trabajar ON trabajar.rfc = empresas.rfc
 GROUP BY empresas.razon_social;
 
 -- i. Encontrar información de los empleados y número de horas que dedican a los proyectos.
---    Interesan aquellos empleados que colaboran en al menos dos proyectos y en donde el
---    número de horas que dediquen a algún proyecto sea mayor a 20.
--- Ya jala
+--    Interesan aquellos empleados que colaboran en al menos dos proyectos y en donde el número de horas que dediquen a algún proyecto sea mayor a 20.
 SELECT no_proyectos,
        horas,
        empleados.*
@@ -106,7 +90,6 @@ INNER JOIN
 ON sub.curp = empleados.curp;
 
 -- j. Encontrar la cantidad de empleados en cada compañía, por año, trimestre y género.
--- Ya jala
 SELECT 
 	rfc,
 	COUNT(trabajar.curp) AS no_empleados_por_compania,
@@ -117,9 +100,7 @@ FROM trabajar
 INNER JOIN empleados ON empleados.curp = trabajar.curp 
 GROUP BY rfc,DATEPART(QUARTER ,trabajar.fecha_ingreso), DATEPART(Y ,trabajar.fecha_ingreso), genero;
 
-
 -- k. Encontrar el nombre del empleado que gana más dinero en cada compañía.
--- Ya jala
 SELECT empresas.razon_social,
 	   nombre,
 	   MAX(salario_quincenal) AS MejorPagado
@@ -128,9 +109,7 @@ INNER JOIN trabajar ON trabajar.rfc = empresas.rfc
 INNER JOIN empleados ON empleados.curp = trabajar.curp
 GROUP BY empresas.razon_social,nombre;
 
--- l. Obtener una lista de los empleados que ganan más del salario promedio que pagan las
--- compañías.
--- Ya jala
+-- l. Obtener una lista de los empleados que ganan más del salario promedio que pagan las compañías.
 SELECT nombre,
 	   paterno,
 	   Salario,
@@ -155,8 +134,6 @@ ON a.rfc = b.rfc
 WHERE Salario > PromedioSalario;
 
 -- m. Encontrar la compañía que tiene menos empleados y listar toda la información de los mismos.
--- Ya jala
--- Hay varias empresas con un empleado.
 SELECT min_empleados,
 	empleados.*
 FROM (SELECT rfc, COUNT(curp) AS no_empleados
@@ -171,9 +148,7 @@ FROM (SELECT rfc, COUNT(curp) AS no_empleados
 	INNER JOIN trabajar ON trabajar.rfc = e.rfc
 	INNER JOIN empleados ON empleados.curp = trabajar.curp;
 
-
 -- n. Información de los proyectos en los que colaboran los empleados que son directores.
--- Ya jala
 SELECT proyectos.*
 FROM empleados
 -- Join para saber qué empleados son directores
@@ -182,7 +157,6 @@ INNER JOIN empresas ON empleados.dirigir_empresa = empresas.rfc
 INNER JOIN proyectos ON proyectos.controlado_por = empresas.rfc ;
 
 -- o. Encontrar la compañía que tiene empleados en cada una de las ciudades que hayas definido.
--- Jala, falta poblar para que no sea vacia
 SELECT a.rfc AS rfc_compania, 
 	   COUNT(a.ciudad) AS num_ciudades_definidas
 FROM 
@@ -204,7 +178,6 @@ FROM
 									 (SELECT DISTINCT ciudad
 									 FROM empresas)) f);
 -- p. Empleados que dejaron de colaborar en proyectos, antes de la fecha de finalización de los mismos.
--- Ya jala 
 SELECT empleados.*
 FROM empleados 
 INNER JOIN colaborar ON empleados.curp = colaborar.curp
@@ -212,7 +185,6 @@ INNER JOIN proyectos ON proyectos.num_proyecto = colaborar.num_proyecto
 WHERE colaborar.fecha_fin < proyectos.fecha_fin;
 
 -- q. Información de los empleados que no colaboran en ningún proyecto.
--- Ya jala
 SELECT empleados.*
 FROM 
 	(SELECT curp
@@ -221,7 +193,6 @@ FROM
 	SELECT curp
 	FROM colaborar) c INNER JOIN empleados  ON c.curp = empleados.curp;
 -- r. Encontrar la información de las compañías que tienen al menos dos empleados en la misma ciudad en que tienen sus instalaciones.
---  Terminada
 SELECT empresas.rfc, 
 	   razon_social,
 	   ciudad,
@@ -235,7 +206,6 @@ FROM (SELECT empresas.rfc, COUNT(empleados.curp) AS no_empleados
 	  INNER JOIN empresas ON empresas.rfc = sub.rfc
 WHERE no_empleados >= 2;
 -- s. Proyecto que más empleados requiere (o requirió) y el número de horas que éstos le dedicaron.
--- Ya jala
 SELECT m.num_proyecto, 
        SUM(num_horas) AS horas_rqueridas
 FROM colaborar 
@@ -254,15 +224,12 @@ FROM colaborar
 	GROUP BY m.num_proyecto;
 
 -- t. Empleados que comenzaron a colaborar en proyectos en la misma fecha de su cumpleaños.
--- Ya jala, Modificado poblacion para que jale, probar de nuevo
-
 SELECT empleados.* 
 FROM empleados
 INNER JOIN colaborar ON empleados.curp = colaborar.curp 
 WHERE colaborar.fecha_inicio = empleados.nacimiento;
 
 -- u. Obtener una lista del número de empleados que supervisa cada supervisor.
--- Ya jala
 SELECT e.nombre AS Jefe,
 COUNT(e.curp) AS Supervisa_a 
 FROM empleados e 
@@ -270,15 +237,12 @@ INNER JOIN empleados s ON e.curp = s.supervisado_por
 GROUP BY e.nombre,e.curp;
 
 -- v. Obtener una lista de los directores de más de 50 años.
--- YA JALA
-
 SELECT empleados.*
 FROM empleados
 INNER JOIN empresas ON empleados.dirigir_empresa = empresas.rfc
 WHERE (CONVERT(int,CONVERT(char(8),GETDATE(),112))-CONVERT(char(8),nacimiento ,112))/10000 > 50;
 
 -- w. Obtener una lista de los empleados cuyo apellido paterno comience con las letras A, D, G, J, L, P o R.
--- YA JALA
 SELECT *
 FROM empleados
 WHERE SUBSTRING(paterno,1,1) IN ('A','D','G','J','L','P','R');
@@ -289,8 +253,7 @@ FROM proyectos
 INNER JOIN colaborar ON proyectos.num_proyecto = colaborar.num_proyecto
 WHERE DATEPART(M ,proyectos.fecha_inicio) = 12;
 
--- y. Crea una vista con la información de los empleados y compañías en que trabajan, de aquellos 
---    empleados que lo hagan en al menos tres compañías diferentes.
+-- y. Crea una vista con la información de los empleados y compañías en que trabajan, de aquellos empleados que lo hagan en al menos tres compañías diferentes.
 CREATE VIEW compa_diferentes(curp, nombre, paterno, materno, fecha, calle,
 		num, ciudad, cp,supervisado,dirige,fecha_inicio, rfc_empresa, razon_social_empresa, calle_empresa, num_empresa, 
 		ciudad_empresa,cp_empresa,b) AS 
@@ -305,3 +268,4 @@ FROM (SELECT e.curp
 		INNER JOIN empleados em2 ON em1.curp = em2.curp
 		INNER JOIN trabajar tr ON tr.curp = em2.curp
 		INNER JOIN empresas emp ON emp.rfc = tr.rfc);
+		
